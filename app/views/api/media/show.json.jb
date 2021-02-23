@@ -1,3 +1,5 @@
-json = render partial: "media.json.jb", locals: {show: @show}
-json[:comments] = @show.comments
-json
+media = render partial: "media.json.jb", locals: {show: @show}
+media[:comments] = @show.comments.map do |comment|
+  render partial: "api/comments/comment.json.jb", locals: { comment: comment }
+end
+media

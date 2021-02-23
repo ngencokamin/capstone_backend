@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     # Users
     post "/users" => "users#create"
     post "/sessions" => "sessions#create"
+    get "/users/:id" => "users#show"
 
     # Media
     get "/media" => "media#index"
