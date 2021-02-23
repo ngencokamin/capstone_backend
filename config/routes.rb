@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     post "/users" => "users#create"
     post "/sessions" => "sessions#create"
     get "/users/:id" => "users#show"
+    patch "/users/" => "users#update"
 
     # Media
     get "/media" => "media#index"
