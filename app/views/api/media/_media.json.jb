@@ -1,0 +1,7 @@
+{
+  title: show.title,
+  imdb_rating: show.imdb_rating,
+  released: show.released,
+  plot: show.plot,
+  poster: show.poster
+}

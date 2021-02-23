@@ -1,0 +1,3 @@
+json = render partial: "media.json.jb", locals: {show: @show}
+json[:comments] = @show.comments
+json

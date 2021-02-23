@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_23_183604) do
+ActiveRecord::Schema.define(version: 2021_02_23_194928) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 2021_02_23_183604) do
     t.string "username"
     t.string "email"
     t.string "password_digest"
-    t.string "profile_picture"
+    t.string "profile_picture", default: "https://secondchancetinyhomes.org/wp-content/uploads/2016/09/empty-profile.png"
     t.text "bio"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

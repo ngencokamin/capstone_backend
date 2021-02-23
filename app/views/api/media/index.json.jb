@@ -1,0 +1,3 @@
+@shows.map do |show|
+  render partial: "media.json.jb", locals: { show: show }
+end
