@@ -1,6 +1,7 @@
 {
-  id: media.id,
+  id: show.id,
   title: show.title,
+  rated: show.rated,
   imdb_rating: show.imdb_rating,
   released: show.released,
   plot: show.plot,

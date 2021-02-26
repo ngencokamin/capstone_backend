@@ -8,10 +8,12 @@ Rails.application.routes.draw do
     post "/users" => "users#create"
     post "/sessions" => "sessions#create"
     get "/users/:id" => "users#show"
-    patch "/users/" => "users#update"
+    patch "/users/me" => "users#update"
+    delete "/users/me" => "users#destroy"
 
     # Media
     get "/media" => "media#index"
     get "/media/:id" => "media#show"
+    post "/media" => "media#create"
   end
 end

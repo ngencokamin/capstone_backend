@@ -35,4 +35,10 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def destroy
+    user = current_user
+    user.destroy
+    render json: { message: "User has been obliterated." }
+  end
+
 end
