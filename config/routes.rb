@@ -20,5 +20,9 @@ Rails.application.routes.draw do
     post "/comments" => "comments#create"
     patch "/comments/:id" => "comments#update"
     delete "/comments/:id" => "comments#destroy"
+
+    # Votes
+    post "/votes" => "votes#create"
+    patch "/votes/:id" => "votes#update"
   end
 end
