@@ -1,5 +1,7 @@
 media = render partial: "media.json.jb", locals: {show: @show}
 media[:comments] = @show.comments.map do |comment|
-  render partial: "api/comments/comment.json.jb", locals: { comment: comment }
+  comment_hash = render partial: "api/comments/comment.json.jb", locals: { comment: comment }
+  comment_hash[:suggested_media] = render partial: "media.json.jb", locals: { show: comment.suggested_media}
+  comment_hash
 end
 media

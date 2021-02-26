@@ -15,5 +15,9 @@ Rails.application.routes.draw do
     get "/media" => "media#index"
     get "/media/:id" => "media#show"
     post "/media" => "media#create"
+
+    # Comments
+    post "/comments" => "comments#create"
+    patch "/comments/:id" => "comments#update"
   end
 end
