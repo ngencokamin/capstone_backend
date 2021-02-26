@@ -1,9 +1,9 @@
 {
-  id: show.id,
-  title: show.title,
-  rated: show.rated,
-  imdb_rating: show.imdb_rating,
-  released: show.released,
-  plot: show.plot,
-  poster: show.poster
+  id: media.id,
+  title: media.title,
+  rated: media.rated,
+  imdb_rating: media.imdb_rating,
+  released: media.released,
+  plot: media.plot,
+  poster: media.poster
 }

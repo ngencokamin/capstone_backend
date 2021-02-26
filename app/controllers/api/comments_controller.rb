@@ -33,4 +33,14 @@ class Api::CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    @comment = Comment.find_by(id: params[:id])
+    if @comment.user_id == current_user.id
+      @comment.destroy
+      render json: "Comment successfully deleted"
+    else
+      render json: {}, status: :unauthorized
+    end
+  end
+
 end
