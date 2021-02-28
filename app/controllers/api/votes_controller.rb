@@ -2,15 +2,19 @@ class Api::VotesController < ApplicationController
   before_action :authenticate_user
 
   def create
-    @vote = Vote.new(
-      user_id: current_user.id,
-      comment_id: params[:comment_id],
-      value: params[:value]
-    )
-    if @vote.save
-      render "show.json.jb"
+    if !current_user.votes.find_by(comment_id: params[:comment_id])
+      @vote = Vote.new(
+        user_id: current_user.id,
+        comment_id: params[:comment_id],
+        value: params[:value]
+      )
+      if @vote.save
+        render "show.json.jb"
+      else
+        render json: { errors: @vote.errors.full_messages }, status: :unprocessable_entity
+      end
     else
-      render json: { errors: @vote.errors.full_messages }, status: :unprocessable_entity
+      render json: {message: "You have already voted on this post"}, status: :unauthorized
     end
   end
 
