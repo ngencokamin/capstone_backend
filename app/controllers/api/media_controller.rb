@@ -12,16 +12,19 @@ class Api::MediaController < ApplicationController
 
   def create
     omdb_id = params[:omdb_id]
-    media_get = HTTP.get("http://www.omdbapi.com/?i=#{omdb_id}&apikey=#{Rails.application.credentials.omdb[:api_key]}").parse
-    @media = Media.new(
-      omdb_id: omdb_id,
-      title: media_get["Title"],
-      imdb_rating: media_get["imdbRating"],
-      released: media_get["Released"],
-      rated: media_get["Rated"],
-      plot: media_get["Plot"],
-      poster: media_get["Poster"]
-    )
+    @media = Media.find_by('omdb_id = ?', params[:omdb_id]) 
+    if !@media
+      media_get = HTTP.get("http://www.omdbapi.com/?i=#{omdb_id}&apikey=#{Rails.application.credentials.omdb[:api_key]}").parse
+      @media = Media.new(
+        omdb_id: omdb_id,
+        title: media_get["Title"],
+        imdb_rating: media_get["imdbRating"],
+        released: media_get["Released"],
+        rated: media_get["Rated"],
+        plot: media_get["Plot"],
+        poster: media_get["Poster"]
+      )
+    end
     if @media.save
       render "show.json.jb"
     else

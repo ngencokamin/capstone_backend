@@ -1,7 +1,6 @@
 {
   id: comment.id,
   user_id: comment.user.id,
-  user: comment.user.username,
   similarity: comment.similarity,
   enjoyability: comment.enjoyability,
   text: comment.text,

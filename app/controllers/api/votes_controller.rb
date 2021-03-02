@@ -14,7 +14,7 @@ class Api::VotesController < ApplicationController
         render json: { errors: @vote.errors.full_messages }, status: :unprocessable_entity
       end
     else
-      render json: {message: "You have already voted on this post"}, status: :unauthorized
+      render json: {message: "You have already voted on this comment"}, status: :unauthorized
     end
   end
 
