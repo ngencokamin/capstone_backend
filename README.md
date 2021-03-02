@@ -13,15 +13,15 @@
 ## Screenshots
 
 <figure style="width: 80%;">
+  <figcaption align="center"><b>Media Index Response</b></figcaption>
   <img src="Screenshots/MediaIndex.png"
-  alt="The beautiful MDN logo." >
-  <figcaption align="center"><b>Media Index</b></figcaption>
+  alt="Media index response." >
 </figure>
 
 <figure style="width: 80%;">
+<figcaption align="center"><b>Media Show with Comments Response</b></figcaption>
   <img src="Screenshots/MediaShow.png"
-  alt="The beautiful MDN logo.">
-  <figcaption align="center"><b>Media Show with Comments</b></figcaption>
+  alt="Media show response with comments.">
 </figure>
 
 
