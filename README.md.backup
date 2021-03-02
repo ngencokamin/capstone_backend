@@ -2,14 +2,6 @@
 ## Introduction
 **It's Over, Isn't It?** is a web app that allows users to find shows similar to ones they’ve previously enjoyed. The site is built with a Ruby on Rails backend and VueJS frontend with OMDB api integration. Users can go to the page of a show they enjoyed and make suggestions, rated on both enjoyability and similarity to the original show. Suggestions will also include a brief description of what the users liked and didn’t like in the suggested show. Suggestions can then be voted down or up depending on if other users liked the suggestion. OMBD integration allows for new shows to be added to the database quickly and accurately as needed. 
 
-
-## Backend Features
-- Integration with OMDb API to provide show data
-- User can update their profile, including bio and profile picture
-- User can create a comment and link to suggested media entry in database
-- User can rate a show on enjoyability and similarity
-- User can vote on other users' suggestions
-
 ## Screenshots
 
 <figure style="width: 80%;">
@@ -25,7 +17,12 @@
 </figure>
 
 
-
+## Backend Features
+- Integration with OMDb API to provide show data
+- User can update their profile, including bio and profile picture
+- User can create a comment and link to suggested media entry in database
+- User can rate a show on enjoyability and similarity
+- User can vote on other users' suggestions
 	
 ## Models
 
