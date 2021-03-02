@@ -26,8 +26,10 @@ class Api::UsersController < ApplicationController
     @user.profile_picture = params[:profile_picture] || @user.profile_picture
     @user.username = params[:username] || @user.username
     @user.bio = params[:bio] || @user.bio
-    @user.password = params[:password] || @user.password
-    @user.password_confirmation = params[:password_confirmation] || @user.password_confirmation
+    if params[:password]
+      @user.password = params[:password]
+      @user.password_confirmation = params[:password_confirmation]
+    end
     if @user.save
       render "show.json.jb"
     else

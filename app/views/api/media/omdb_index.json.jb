@@ -1,0 +1,8 @@
+@search_index["Search"].map do |media|
+  {
+    title: media["Title"],
+    year: media["Year"],
+    omdb_id: media["imdbID"],
+    poster: media["Poster"]
+  }
+end

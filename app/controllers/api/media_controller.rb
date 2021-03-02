@@ -5,6 +5,12 @@ class Api::MediaController < ApplicationController
     render "index.json.jb"
   end
 
+  def omdb_index
+    search = params[:search]
+    @search_index = HTTP.get("http://www.omdbapi.com/?s=#{search}&type=series&apikey=#{Rails.application.credentials.omdb[:api_key]}").parse
+    render "omdb_index.json.jb"
+  end
+
   def show
     @media = Media.find_by(id: params[:id])
     render "show.json.jb"

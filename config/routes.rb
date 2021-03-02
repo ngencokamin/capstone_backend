@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     # Media
     get "/media" => "media#index"
     get "/media/:id" => "media#show"
+    get "/omdb_media/:search" => "media#omdb_index"
     post "/media" => "media#create"
 
     # Comments
