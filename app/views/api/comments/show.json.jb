@@ -1,3 +1,4 @@
 comment_hash = render partial: "comment.json.jb", locals: { comment: @comment }
 comment_hash[:suggested_media] = render partial: "api/media/media.json.jb", locals: { media: @comment.suggested_media}
+comment_hash[:user] = render partial: "api/users/user.json.jb", locals: { user: @comment.user}
 comment_hash

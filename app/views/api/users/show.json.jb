@@ -1,5 +1,8 @@
 user = render partial: "user.json.jb", locals: {user: @user}
 user[:comments] = @user.comments.map do |comment|
-  render partial: "api/comments/comment.json.jb", locals: { comment: comment }
+  comment_hash = render partial: "api/comments/comment.json.jb", locals: { comment: comment }
+  comment_hash[:media] = render partial: "api/media/media.json.jb", locals: { media: comment.media }
+  comment_hash[:suggested_media] = render partial: "api/media/media.json.jb", locals: { media: comment.suggested_media }
+  comment_hash
 end
 user
