@@ -39,8 +39,11 @@ class Api::UsersController < ApplicationController
 
   def destroy
     user = current_user
-    user.destroy
-    render json: { message: "User has been obliterated." }
+    if user.destroy
+      render json: { message: "User has been obliterated." }
+    else
+      render json: {}, status: :unauthorized
+    end
   end
 
 end
