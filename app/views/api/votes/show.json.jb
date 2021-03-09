@@ -1,5 +1,1 @@
-{
-  id: @vote.id,
-  comment_id: @vote.comment_id,
-  value: @vote.value
-}
+render partial: "vote.json.jb", locals: {vote: @vote}
