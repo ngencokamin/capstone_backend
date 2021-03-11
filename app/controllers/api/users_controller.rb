@@ -21,9 +21,11 @@ class Api::UsersController < ApplicationController
   end 
 
   def update
+    response = Cloudinary::Uploader.upload(params[:image], resource_type: :auto)
+    cloudinary_url = response["secure_url"]
     @user = current_user
     @user.email = params[:email] || @user.email
-    @user.profile_picture = params[:profile_picture] || @user.profile_picture
+    @user.profile_picture = cloudinary_url || @user.profile_picture
     @user.username = params[:username] || @user.username
     @user.bio = params[:bio] || @user.bio
     if params[:password]
