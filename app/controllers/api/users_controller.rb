@@ -28,6 +28,7 @@ class Api::UsersController < ApplicationController
     @user.profile_picture = cloudinary_url || @user.profile_picture
     @user.username = params[:username] || @user.username
     @user.bio = params[:bio] || @user.bio
+    @user.favorite_media_id = params[:favorite_media_id] || @user.favorite_media_id
     if params[:password]
       @user.password = params[:password]
       @user.password_confirmation = params[:password_confirmation]
