@@ -6,7 +6,7 @@ class Api::MediaController < ApplicationController
   end
 
   def omdb_index
-    search = params[:search]
+    search = params[:search].tr(" ", "+")
     @search_index = HTTP.get("http://www.omdbapi.com/?s=#{search}&type=series&apikey=#{Rails.application.credentials.omdb[:api_key]}").parse
     render "omdb_index.json.jb"
   end
