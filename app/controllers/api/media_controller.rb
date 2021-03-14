@@ -1,7 +1,11 @@
 class Api::MediaController < ApplicationController
 
+  # def index
+  #   @media = Media.all
+  #   render "index.json.jb"
+  # end
   def index
-    @media = Media.all
+    @media = Media.all.sort_by { |media| -media.comments.length}
     render "index.json.jb"
   end
 

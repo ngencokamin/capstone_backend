@@ -1,3 +1,5 @@
 @media.map do |media|
-  render partial: "media.json.jb", locals: { media: media }
+  this_media = render partial: "media.json.jb", locals: { media: media }
+  this_media[:comment_count] = media.comments.length
+  this_media
 end

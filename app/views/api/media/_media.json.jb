@@ -5,5 +5,5 @@
   imdb_rating: media.imdb_rating,
   released: media.released,
   plot: media.plot,
-  poster: media.poster
+  poster: media.poster,
 }
