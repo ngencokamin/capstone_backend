@@ -1,4 +1,4 @@
-@search_index["Search"].map do |media|
+@search_index["Search"].reject{|media| media["Poster"] == "N/A"}.map do |media|
   {
     title: media["Title"],
     year: media["Year"],
