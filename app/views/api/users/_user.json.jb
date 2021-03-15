@@ -3,5 +3,6 @@
   username: user.username,
   email: user.email,
   profile_picture: user.profile_picture,
-  bio: user.bio
+  bio: user.bio,
+  profanity_filter: user.profanity_filter
 }

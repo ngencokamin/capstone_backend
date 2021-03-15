@@ -3,6 +3,17 @@ if @user.favorite_media
   user[:favorite_media] = render partial: "api/media/media.json.jb", locals: { media: @user.favorite_media}
 end
 user[:comments] = @user.comments.map do |comment|
+  if !current_user || current_user.profanity_filter 
+    if ProfanityFilter::Base.profane?(comment.media.title)
+      comment.media.title = ProfanityFilter::Base.clean(comment.media.title, 'hollow')
+      comment.media.poster = nil
+    end
+    comment.text = ProfanityFilter::Base.clean(comment.text, 'stars')
+    if ProfanityFilter::Base.profane?(comment.suggested_media.title)
+      comment.suggested_media.title = ProfanityFilter::Base.clean(comment.suggested_media.title, 'hollow')
+      comment.suggested_media.poster = nil
+    end
+  end
   comment_hash = render partial: "api/comments/comment.json.jb", locals: { comment: comment }
   comment_hash[:media] = render partial: "api/media/media.json.jb", locals: { media: comment.media }
   comment_hash[:suggested_media] = render partial: "api/media/media.json.jb", locals: { media: comment.suggested_media }

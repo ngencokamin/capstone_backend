@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_12_173616) do
+ActiveRecord::Schema.define(version: 2021_03_15_165802) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 2021_03_12_173616) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "favorite_media_id"
+    t.boolean "profanity_filter", default: false
   end
 
   create_table "votes", force: :cascade do |t|

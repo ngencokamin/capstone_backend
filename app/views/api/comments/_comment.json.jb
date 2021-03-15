@@ -4,5 +4,7 @@
   similarity: comment.similarity,
   enjoyability: comment.enjoyability,
   text: comment.text,
+  created_at: comment.created_at,
+  updated_at: comment.updated_at,
   vote_total: comment.votes.sum('value')
 }
