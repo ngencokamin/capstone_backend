@@ -1,4 +1,4 @@
-@search_index["Search"].reject{|media| media["Poster"] == "N/A"}.map do |media|
+@search_index["Search"].reject{|media| media["Poster"] == "N/A" || ProfanityFilter::Base.profane?(media["Title"]) if !current_user || current_user.profanity_filter}.map do |media|
   {
     title: media["Title"],
     year: media["Year"],

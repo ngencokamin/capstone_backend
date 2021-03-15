@@ -1,13 +1,7 @@
 
 media = render partial: "media.json.jb", locals: {media: @media}
-media[:comments] = @media.comments.map do |comment|
-  if !current_user || current_user.profanity_filter 
-    comment.text = ProfanityFilter::Base.clean(comment.text, 'stars')
-    if ProfanityFilter::Base.profane?(comment.suggested_media.title)
-      comment.suggested_media.title = ProfanityFilter::Base.clean(comment.suggested_media.title, 'hollow')
-      comment.suggested_media.poster = nil
-    end
-  end
+media[:comments] = @media.comments.reject{|comment| ProfanityFilter::Base.profane?(comment.suggested_media.title) if !current_user || current_user.profanity_filter}.map do |comment|
+  comment.text = ProfanityFilter::Base.clean(comment.text, 'stars') if !current_user || current_user.profanity_filter
   comment_hash = render partial: "api/comments/comment.json.jb", locals: { comment: comment }
   
   comment_hash[:suggested_media] = render partial: "media.json.jb", locals: { media: comment.suggested_media}

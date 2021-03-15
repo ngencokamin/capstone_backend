@@ -2,28 +2,20 @@ class Api::MediaController < ApplicationController
 
   def index
     @media = Media.all.sort_by { |media| -media.comments.length}
-    if !current_user || current_user.profanity_filter 
-      @media.map do |media|
-        if ProfanityFilter::Base.profane?(media.title)
-          media.title = ProfanityFilter::Base.clean(media.title, 'hollow')
-          media.poster = nil
-        end
-      end
-    end
+    # if !current_user || current_user.profanity_filter 
+    #   @media.map do |media|
+    #     if ProfanityFilter::Base.profane?(media.title)
+    #       media.title = ProfanityFilter::Base.clean(media.title, 'hollow')
+    #       media.poster = nil
+    #     end
+    #   end
+    # end
     render "index.json.jb"
   end
 
   def omdb_index
     search = params[:search].tr(" ", "+")
     @search_index = HTTP.get("http://www.omdbapi.com/?s=#{search}&type=series&apikey=#{Rails.application.credentials.omdb[:api_key]}").parse
-    if !current_user || current_user.profanity_filter 
-      @search_index["Search"].map do |search|
-        if ProfanityFilter::Base.profane?(search["Title"])
-          search["Title"] = ProfanityFilter::Base.clean(search["Title"], 'hollow')
-          search["Poster"] = nil
-        end
-      end
-    end
     render "omdb_index.json.jb"
   end
 
