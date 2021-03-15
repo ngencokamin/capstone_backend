@@ -6,7 +6,8 @@ class Api::UsersController < ApplicationController
       username: params[:username],
       email: params[:email],
       password: params[:password],
-      password_confirmation: params[:password_confirmation]
+      password_confirmation: params[:password_confirmation],
+      profanity_filter: params[:profanity_filter]
     )
     if @user.save
       render "show.json.jb"
@@ -30,6 +31,7 @@ class Api::UsersController < ApplicationController
     @user.profile_picture = cloudinary_url || @user.profile_picture
     @user.username = params[:username] || @user.username
     @user.bio = params[:bio] || @user.bio
+    @user.profanity_filter = params[:profanity_filter] || @user.profanity_filter
     @user.favorite_media_id = params[:favorite_media_id] || @user.favorite_media_id
     if params[:password]
       @user.password = params[:password]

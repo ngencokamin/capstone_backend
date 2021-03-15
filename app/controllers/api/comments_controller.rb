@@ -23,6 +23,7 @@ class Api::CommentsController < ApplicationController
       @comment.similarity = params[:similarity] || @comment.similarity
       @comment.enjoyability = params[:enjoyability] || @comment.enjoyability
       @comment.text = params[:text] || @comment.text
+      @comment.touch
       if @comment.save
         render "show.json.jb"
       else
