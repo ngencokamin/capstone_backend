@@ -11,7 +11,7 @@ class Api::SavedShowsController < ApplicationController
     if @saved_show.save
       render "show.json.jb"
     else
-      render json: { errors: @media.errors.full_messages }, status: :unprocessable_entity
+      render json: { errors: @saved_show.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
@@ -21,7 +21,7 @@ class Api::SavedShowsController < ApplicationController
       if saved_show.destroy
         render json: { message: "Show successfully removed from watchlist" }
       else
-        render json: { errors: @media.errors.full_messages }, status: :unprocessable_entity    
+        render json: { errors: @saved_show.errors.full_messages }, status: :unprocessable_entity    
       end
     else
       render json: {}, status: :unauthorized

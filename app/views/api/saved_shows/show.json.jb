@@ -1,3 +1,3 @@
-new_show = render partial: "saved_show.json.jb", locals: { saved_show: @saved_show }
-new_show[:media] = render partial: "api/media/media.json.jb", locals: { media: @saved_show.media }
+new_show = render partial: "api/media/media.json.jb", locals: { media: @saved_show.media }
+new_show[:info] = render partial: "saved_show.json.jb", locals: { saved_show: @saved_show }
 new_show
