@@ -1,0 +1,6 @@
+{
+  id: saved_show.id,
+  user_id: saved_show.user_id,
+  media_id: saved_show.media_id,
+  created_at: saved_show.created_at
+}

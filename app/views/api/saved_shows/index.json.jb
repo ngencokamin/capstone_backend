@@ -1,0 +1,5 @@
+@saved_shows.map do |saved_show|
+  this_saved_show = render partial: "saved_show.json.jb", locals: {saved_show: saved_show}
+  this_saved_show[:media] = render partial: "api/media/media.json.jb", locals: { media: saved_show.media }
+  this_saved_show
+end

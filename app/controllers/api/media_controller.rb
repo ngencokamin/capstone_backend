@@ -2,14 +2,6 @@ class Api::MediaController < ApplicationController
 
   def index
     @media = Media.all.sort_by { |media| -media.comments.length}
-    # if !current_user || current_user.profanity_filter 
-    #   @media.map do |media|
-    #     if ProfanityFilter::Base.profane?(media.title)
-    #       media.title = ProfanityFilter::Base.clean(media.title, 'hollow')
-    #       media.poster = nil
-    #     end
-    #   end
-    # end
     render "index.json.jb"
   end
 

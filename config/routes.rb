@@ -25,5 +25,10 @@ Rails.application.routes.draw do
     # Votes
     post "/votes" => "votes#create"
     patch "/votes/:id" => "votes#update"
+
+    # Saved Shows
+    get "/saved_shows/:id" => "saved_shows#index"
+    post "/saved_shows/" => "saved_shows#create"
+    delete "/saved_shows/:id" => "saved_shows#destroy"
   end
 end
