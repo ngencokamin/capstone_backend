@@ -7,7 +7,7 @@ class Api::SavedShowsController < ApplicationController
   end
 
   def create
-    @saved_show = SavedShow.new(user_id: current_user.id, media_id: params[:media_id])
+    @saved_show = SavedShow.new(user_id: current_user.id, media_id: params[:media_id], trello_id: params[:trello_id])
     if @saved_show.save
       render "show.json.jb"
     else

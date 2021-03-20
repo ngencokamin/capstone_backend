@@ -7,7 +7,8 @@ class Api::UsersController < ApplicationController
       email: params[:email],
       password: params[:password],
       password_confirmation: params[:password_confirmation],
-      profanity_filter: params[:profanity_filter]
+      profanity_filter: params[:profanity_filter],
+      trello_list_id: params[:trello_list_id] 
     )
     if @user.save
       render "show.json.jb"

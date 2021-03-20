@@ -3,5 +3,6 @@
   user_id: saved_show.user_id,
   media_id: saved_show.media_id,
   user: saved_show.user, 
-  created_at: saved_show.created_at
+  created_at: saved_show.created_at,
+  trello_id: saved_show.trello_id
 }

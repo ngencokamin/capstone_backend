@@ -4,5 +4,6 @@
   email: user.email,
   profile_picture: user.profile_picture,
   bio: user.bio,
-  profanity_filter: user.profanity_filter
+  profanity_filter: user.profanity_filter,
+  trello: user.trello_list_id
 }
