@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     get "/users/:id" => "users#show"
     patch "/users/me" => "users#update"
     delete "/users/me" => "users#destroy"
+    delete "/users/me/trello" => "users#trello_destroy"
 
     # Media
     get "/media" => "media#index"
@@ -29,6 +30,7 @@ Rails.application.routes.draw do
     # Saved Shows
     get "/saved_shows/:id" => "saved_shows#index"
     post "/saved_shows/" => "saved_shows#create"
+    patch "/saved_shows/:id" => "saved_shows#update"
     delete "/saved_shows/:id" => "saved_shows#destroy"
   end
 end

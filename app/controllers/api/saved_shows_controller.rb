@@ -15,6 +15,16 @@ class Api::SavedShowsController < ApplicationController
     end
   end
 
+  def update
+    @saved_show = SavedShow.find_by(id: params[:id])
+    @saved_show.trello_id = params[:trello_id]
+    if @saved_show.save
+      render "show.json.jb"
+    else
+      render json: { errors: @saved_show.errors.full_messages }, status: :unprocessable_entity
+    end
+  end
+
   def destroy
     saved_show = SavedShow.find_by(id: params[:id])
     if saved_show.user_id == current_user.id
