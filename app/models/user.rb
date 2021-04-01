@@ -9,7 +9,7 @@ class User < ApplicationRecord
   
   validates :email, presence: true, uniqueness: true
   validates :username, presence: true, uniqueness: true
-  validates :password, length: { minimum: 8}, :confirmation => true, :on => :create
+  # validates :password, length: { minimum: 8}, :confirmation => true, :on => :create
   validates :bio, length: { maximum: 500 }
 
 end
