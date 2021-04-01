@@ -18,10 +18,10 @@ Media.create!([
 ])
 
 User.create!([
-  {username: "$nix", email: "ngencokamin@gmail.com", password_digest: "$2a$12$qOj2o/00MFoVJF0bhkh5w.pU2CkdmR2DF7TomNFqh7nfFDiDHWn0.", profile_picture: "https://res.cloudinary.com/drdocnfbj/image/upload/v1616654776/nljhqs3xjjcyeyf7w8ek.jpg", bio: "My name's Nix, I'm a Full-Stack Developer. I hope you like my site :)", favorite_media_id: 2, profanity_filter: false, trello_list_id: "605e129c0738a68e1020cbcf"},
-  {username: "catlover", email: "catlover@email.com", password_digest: "$2a$12$0ksWOpWtIBpZBouZRuXgDeTQBv/D2Gm8bZeufdQMj.nbs8rwuBRlC", profile_picture: "https://res.cloudinary.com/drdocnfbj/image/upload/v1616650910/e1shlrnwrxmgn3ovof6q.jpg", bio: "Hi there!\nIn my mind, there's nothing better than relaxing and watching TV with a cat on my lap after a long day at work. All shows I suggest are cat approved!", favorite_media_id: 15, profanity_filter: false, trello_list_id: nil},
+    {username: "catlover", email: "catlover@email.com", password_digest: "$2a$12$0ksWOpWtIBpZBouZRuXgDeTQBv/D2Gm8bZeufdQMj.nbs8rwuBRlC", profile_picture: "https://res.cloudinary.com/drdocnfbj/image/upload/v1616650910/e1shlrnwrxmgn3ovof6q.jpg", bio: "Hi there!\nIn my mind, there's nothing better than relaxing and watching TV with a cat on my lap after a long day at work. All shows I suggest are cat approved!", favorite_media_id: 15, profanity_filter: false, trello_list_id: nil},
   {username: "darthbinks", email: "jarjar@email.com", password_digest: "$2a$12$ggeZ9vtXashZycyeEKZ2f.epZhsTUCqCoDLM75CntCSdlt/ISjbLe", profile_picture: "https://res.cloudinary.com/drdocnfbj/image/upload/v1616652606/j82t2wrlilszhtgyfz2e.jpg", bio: "JAR JAR BINKS IS A SITH LORD! WAKE UP SHEEPLE! SHEEV WAS A PUPPET!", favorite_media_id: 2, profanity_filter: false, trello_list_id: nil},
   {username: "hypnotoad", email: "hypnotoad@email.com", password_digest: "$2a$12$liFH4Ezccu3tPDrlHrSZYeI6RbodESEmVI7qPGzXR0q5OyyELO9Ky", profile_picture: "https://res.cloudinary.com/drdocnfbj/image/upload/v1616653489/j8imf6ul6fxivudxemss.jpg", bio: "All glory to the hypnotoad!", favorite_media_id: 7, profanity_filter: false, trello_list_id: nil}
+  {username: "$nix", email: "ngencokamin@gmail.com", password_digest: "$2a$12$qOj2o/00MFoVJF0bhkh5w.pU2CkdmR2DF7TomNFqh7nfFDiDHWn0.", profile_picture: "https://res.cloudinary.com/drdocnfbj/image/upload/v1616654776/nljhqs3xjjcyeyf7w8ek.jpg", bio: "My name's Nix, I'm a Full-Stack Developer. I hope you like my site :)", favorite_media_id: 2, profanity_filter: false, trello_list_id: "605e129c0738a68e1020cbcf"},
 ])
 SavedShow.create!([
   {user_id: 1, media_id: 11, trello_id: nil},
@@ -40,8 +40,8 @@ SavedShow.create!([
   {user_id: 4, media_id: 13, trello_id: "605e129e59f4231b4fa54043"},
   {user_id: 4, media_id: 8, trello_id: "605e129e4a452f3a92c6f366"},
   {user_id: 4, media_id: 10, trello_id: "605e129e5bb74d2a675a7d5e"},
-  {user_id: 4, media_id: 15, trello_id: "605e129e6f3fcc529635be64"},
-  {user_id: 4, media_id: 22, trello_id: "605e129edc89fd1b8e554da8"}
+  {user_id: 4, media_id: 14, trello_id: "605e129e6f3fcc529635be64"},
+  {user_id: 4, media_id: 16, trello_id: "605e129edc89fd1b8e554da8"}
 ])
 Comment.create!([
   {text: "Parks and Rec conjures up familiar feelings with its mockumentary brand humor centering around a workplace, but differs enough to keep from feeling stale. Highly suggest this show (but maybe skip the first season)", similarity: 6, enjoyability: 8, media_id: 1, user_id: 1, suggested_media_id: 5},
@@ -54,8 +54,8 @@ Comment.create!([
   {text: "HYPNOTOAD SAYS WATCH FUTURAMA", similarity: 5, enjoyability: 10, media_id: 12, user_id: 3, suggested_media_id: 7},
   {text: "HYPNOTOAD SAYS WATCH ARCHER", similarity: 6, enjoyability: 8, media_id: 7, user_id: 3, suggested_media_id: 13},
   {text: "HYPNOTOAD SAYS WATCH COMMUNITY", similarity: 5, enjoyability: 9, media_id: 1, user_id: 3, suggested_media_id: 4},
-  {text: "Trollhunters is honestly fantastic. Highly suggest giving it a watch, you won't regret it!", similarity: 7, enjoyability: 9, media_id: 8, user_id: 4, suggested_media_id: 16},
-  {text: "Both heartfelt comedies about chosen family, definitely give The Good Place a shot.", similarity: 6, enjoyability: 9, media_id: 22, user_id: 4, suggested_media_id: 6}
+  {text: "Trollhunters is honestly fantastic. Highly suggest giving it a watch, you won't regret it!", similarity: 7, enjoyability: 9, media_id: 8, user_id: 4, suggested_media_id: 15},
+  {text: "Both heartfelt comedies about chosen family, definitely give The Good Place a shot.", similarity: 6, enjoyability: 9, media_id: 16, user_id: 4, suggested_media_id: 6}
 ])
 
 Vote.create!([
@@ -74,11 +74,11 @@ Vote.create!([
   {user_id: 1, comment_id: 12, value: 1},
   {user_id: 2, comment_id: 12, value: 1},
   {user_id: 1, comment_id: 3, value: -1},
-  {user_id: 4, comment_id: 13, value: -1},
+  {user_id: 4, comment_id: 12, value: -1},
   {user_id: 4, comment_id: 12, value: -1},
   {user_id: 4, comment_id: 8, value: 1},
-  {user_id: 4, comment_id: 14, value: 1},
-  {user_id: 4, comment_id: 15, value: 1},
-  {user_id: 4, comment_id: 16, value: -1},
-  {user_id: 4, comment_id: 17, value: -1}
+  {user_id: 4, comment_id: 11, value: 1},
+  {user_id: 4, comment_id: 10, value: 1},
+  {user_id: 4, comment_id: 12, value: -1},
+  {user_id: 4, comment_id: 5, value: -1}
 ])
